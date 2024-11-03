@@ -7,7 +7,6 @@ export const getOpportunitiesData = () => {
         .then((snapshot) => {
             if (snapshot.exists()) {
                 const opportunitiesList = snapshot.val();
-                console.log(opportunitiesList);
                 return opportunitiesList;
             } else {
                 return null;

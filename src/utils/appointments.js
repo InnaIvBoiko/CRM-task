@@ -7,7 +7,6 @@ export const getAppointmentsData = () => {
         .then((snapshot) => {
             if (snapshot.exists()) {
                 const appointmentsList = snapshot.val();
-                console.log(appointmentsList);
                 return appointmentsList;
             } else {
                 return null;

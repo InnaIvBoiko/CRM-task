@@ -7,7 +7,6 @@ export const getClientsData = () => {
         .then((snapshot) => {
             if (snapshot.exists()) {
                 const clientsList = snapshot.val();
-                console.log(clientsList);
                 return clientsList;
             } else {
                 return null;
