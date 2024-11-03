@@ -18,13 +18,8 @@ export default function Appointments({appointmentsList}) {
     }));
 
     return (
-        <div>
-            <ul>
-                <li><button onClick={() => setView('day')}>Giorno</button></li>
-                <li><button onClick={() => setView('week')}>Settimana</button></li>
-                <li><button onClick={() => setView('month')}>Mese</button></li>
-                <li><button onClick={() => setView('year')}>Anno</button></li>
-            </ul>
+        <section>
+            <button onClick={() => setView('year')}>Year</button>
 
             {view === 'year' ? (
                 <YearView events={events} />
@@ -39,6 +34,6 @@ export default function Appointments({appointmentsList}) {
                     style={{ height: 500 }}
                 />
             )}
-        </div>
+        </section>
     );
 }

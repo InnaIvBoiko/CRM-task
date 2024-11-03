@@ -1,0 +1,6 @@
+.card {
+  padding: 16px;
+  border: 1px solid gray;
+  background-repeat: 4px;
+  width: calc((1440px - 24px * 3) / 4);
+}

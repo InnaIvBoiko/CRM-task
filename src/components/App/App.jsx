@@ -4,6 +4,8 @@ import { getClientsData } from '../../utils/clients.js';
 import { getOpportunitiesData } from '../../utils/opportunities.js';
 import { getAppointmentsData } from '../../utils/appointments.js';
 import css from './App.module.css';
+import ClientsList from '../ClientsList/ClientsList.jsx';
+import OpportunitiesList from '../OpportunitiesList/OpportunitiesList.jsx';
 
 export default function App() {
     const [clients, setClients] = useState([]);
@@ -34,7 +36,13 @@ export default function App() {
     return (
         <main className={css.container}>
             <Appointments appointmentsList={appointments} />
-            
+
+            <h2>Clients:</h2>
+            <ClientsList clientsList={clients} />
+
+            <h2>Opportunities:</h2>
+            <OpportunitiesList opportunitiesList={opportunities} />
+
         </main>
     );
 }
