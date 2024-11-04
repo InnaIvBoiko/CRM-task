@@ -14,10 +14,6 @@ export default function OpportunitiesPage() {
     }, []);
 
     return (
-        <>
-            <h2>Opportunities:</h2>
             <OpportunitiesList opportunitiesList={opportunities} />
-
-        </>
     );
 }

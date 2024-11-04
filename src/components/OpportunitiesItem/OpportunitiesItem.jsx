@@ -14,7 +14,7 @@ export default function OpportunitiesItem({ opportunity: {
             <h3>{name}</h3>
             <p>{state}</p>
             <h4>{description}</h4>
-            <h4>{valore_stimato}</h4>
+            <h4>Prezzo (stimato): € {valore_stimato}.00</h4>
             <p>{note}</p>
         </div>
     );

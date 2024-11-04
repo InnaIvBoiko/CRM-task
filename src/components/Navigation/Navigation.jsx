@@ -6,7 +6,6 @@ const getNavLinkClass = ({ isActive }) => {
   return clsx(css.navMenuItem, isActive && css.active);
 };
 
-
 export default function Navigation() {
     return (
         <header className={css.mainHeader}>

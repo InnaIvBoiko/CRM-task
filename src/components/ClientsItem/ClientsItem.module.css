@@ -1,6 +1,15 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   padding: 16px;
-  border: 1px solid gray;
-  background-repeat: 4px;
-  width: calc((1440px - 24px * 3) / 4);
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  width: calc((1200px - 24px * 3) / 4);
+}
+
+.card:focus,
+.card:hover {
+  background-color: var(--accent);
+  color: var(--white);
 }

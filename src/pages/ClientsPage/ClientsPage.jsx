@@ -14,9 +14,6 @@ export default function ClientsPage() {
 
     
     return (
-        <>
-            <h2>Clients:</h2>
-            <ClientsList clientsList={clients} />
-        </>
+        <ClientsList clientsList={clients} />
     )
 }

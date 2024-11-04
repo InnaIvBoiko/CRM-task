@@ -14,7 +14,7 @@ export default function ClientsItem({ client: {
             <h3>{name} {surname}</h3>
             <p>{date_of_birth}</p>
             <h4>{phone}</h4>
-            <h4>{email}</h4>
+            <a href={'mailto:' + email} target='_blank'>{email}</a>
         </div>
     )
 }
