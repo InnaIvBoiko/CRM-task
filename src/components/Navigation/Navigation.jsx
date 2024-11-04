@@ -13,17 +13,17 @@ export default function Navigation() {
                 <ul className={css.navMenu}>
                     <li>
                         <NavLink to={'/'} className={getNavLinkClass}>
-                            Appointments
+                            Appuntamenti
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to={'/opportunities'} className={getNavLinkClass}>
-                            Opportunities
+                            Opportunità
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to={'/clients'} className={getNavLinkClass}>
-                            Clients
+                            Clienti
                         </NavLink>
                     </li>
                 </ul>
