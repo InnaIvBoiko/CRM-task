@@ -7,6 +7,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --dark: #1a194c;
+  --white: #fdfdff;
+  --light: #f8f8ff;
+  --accent: #eb4d3a;
+  --main: #e8e8fd;
+}
+
+body {
+  background-color: var(--main);
+  color: var(--dark);
 }
 
 h1,

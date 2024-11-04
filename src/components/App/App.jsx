@@ -1,48 +1,22 @@
-import { useState, useEffect } from 'react';
-import Appointments from '../Appointments/Appointments.jsx';
-import { getClientsData } from '../../utils/clients.js';
-import { getOpportunitiesData } from '../../utils/opportunities.js';
-import { getAppointmentsData } from '../../utils/appointments.js';
-import css from './App.module.css';
-import ClientsList from '../ClientsList/ClientsList.jsx';
-import OpportunitiesList from '../OpportunitiesList/OpportunitiesList.jsx';
+import { lazy } from 'react';
+import Layout from '../Layout/Layout.jsx';
+import { Route, Routes } from 'react-router-dom';
+
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
+const OpportunitiesPage = lazy(() => import('../../pages/OpportunitiesPage/OpportunitiesPage.jsx'));
+const ClientsPage = lazy(() => import('../../pages/ClientsPage/ClientsPage.jsx'));
+const NotFoundPage = lazy(() => import('../../pages/NotFoundPage/NotFoundPage.jsx'));
 
 export default function App() {
-    const [clients, setClients] = useState([]);
-    const [opportunities, setOpportunities] = useState([]);
-    const [appointments, setAppointments] = useState([]);
-
-    useEffect(() => {
-        const fetchClientsList = async () => {
-            const clientsData = await getClientsData();
-            setClients(Object.values(clientsData) || []);
-        };
-        fetchClientsList();
-
-        const fetchOpportunitiesList = async () => {
-            const opportunitiesData = await getOpportunitiesData();
-            setOpportunities(Object.values(opportunitiesData) || []);
-        };
-        fetchOpportunitiesList();
-
-        const fetchAppointmentsList = async () => {
-            const appointmentsData = await getAppointmentsData();
-            setAppointments(Object.values(appointmentsData) || []);
-        };
-        fetchAppointmentsList();
-
-    }, []);
 
     return (
-        <main className={css.container}>
-            <Appointments appointmentsList={appointments} />
-
-            <h2>Clients:</h2>
-            <ClientsList clientsList={clients} />
-
-            <h2>Opportunities:</h2>
-            <OpportunitiesList opportunitiesList={opportunities} />
-
-        </main>
+        <Layout>
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/opportunities' element={<OpportunitiesPage />} />
+                <Route path='/clients' element={<ClientsPage />} />
+                <Route path='/*' element={<NotFoundPage />} />               
+            </Routes>
+        </Layout>
     );
 }
